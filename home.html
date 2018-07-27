@@ -1,0 +1,110 @@
+<html>
+<head>
+	<title>home</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script>
+	<script src="http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.2/modernizr.js"></script>
+	<script>
+	
+	console.log("in preloader");
+	$(window).load(function() {
+        
+		// Animate loader off screen
+		$(".se-pre-con").delay(2000).fadeOut("fast");
+	});
+	</script>
+	
+</head>
+
+<style type="text/css">
+.no-js #loader { display: none;  }
+.js #loader { display: block; position: absolute; left: 100px; top: 0; }
+.se-pre-con {
+	position: fixed;
+	left: 0px;
+	top: 0px;
+	width: 100%;
+	height: 100%;
+	z-index: 9999;
+	background: url(images/loader-64x/Preloader_4.gif) center no-repeat #fff;
+}
+.header{height: 75px;}
+body{
+	font-size: 20px;
+	font-family: 'Work Sans', sans-serif;
+	color: #333;
+	font-weight: 300;
+	text-align: center;
+	background-color: #f8f6f0;
+}
+h1{
+	font-weight: 300;
+	margin: -8px;
+	padding-top: 39px;
+	font-size: 30px;
+	background-color: #444;
+	color: #fff;
+}
+.question{
+	font-size: 30px;
+	margin-bottom: 10px;
+}
+.answers {
+	margin-bottom: 20px;
+	text-align: left;
+	display: inline-block;
+}
+.answers label{
+	display: block;
+	margin-bottom: 10px;
+}
+button{
+	font-family: 'Work Sans', sans-serif;
+	font-size: 22px;
+	background-color: #2a2e2f;
+	color: #fff;
+	border: 0px;
+	border-radius: 3px;
+	padding: 20px;
+	cursor: pointer;
+	margin-bottom: 20px;
+}
+button:hover{
+	background-color: #8fde89;
+}
+.slide{
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	width: 100%;
+	z-index: 1;
+	opacity: 0;
+	transition: opacity 0.5s;
+}
+.active-slide{
+	opacity: 1;
+	z-index: 2;
+}
+.quiz-container{
+	position: relative;
+	height: 200px;
+	margin-top: 40px;
+}
+</style>
+
+<body>
+	<div class="se-pre-con"></div>
+	<h1 class="header">Quiz on capital cities</h1>
+	<div class="quiz-container" id="quizContainer">
+		<div id="quiz"></div> 
+	</div>
+	<button id="previous">Previous Question</button>
+	<button id="next">Next Question</button>
+	<button id="submit">Submit Quiz</button><br><br><br>
+	<!-- <button id="add">add questions</button> -->
+
+	<div id="results"></div>
+
+	<script src="js/script.js"></script>
+</body>
+</html>	
